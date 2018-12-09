@@ -275,7 +275,7 @@ $card-border-radius: $default-border-radius;
 $card-header-background-color: $light-gray;
 $card-header-background-color-primary: #3d8bea;
 $card-header-padding: 0.5rem 1rem;
-$card-row-padding: 0.5rem 1rem;
+$card-row-padding: 0.25rem 0.25rem;
 $card-body-padding: 0.5rem 1rem;
 $card-footer-padding: 0.5rem 1rem;
 $card-width: 20rem;
@@ -310,7 +310,7 @@ $bs-layout: (
         lg : 1200px // 1200 =< lg
 );
 $grid-column-count: 12;
-$grid-column-padding: .5rem .25rem;
+$grid-column-padding: .25rem .25rem;
 
 //for form
 $form-form-item-margin-bottom: 0.75rem;

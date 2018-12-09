@@ -999,8 +999,13 @@ html {
   font-size: 16px;
 }
 
+@media only screen and (min-width: 640px) {
+  html {
+    font-size: 200% !important;
+  }
+}
 body {
-  font: 1rem/1.5rem tahoma, arial, Microsoft YaHei, sans-serif;
+  font: 1rem/1.5 tahoma, arial, Microsoft YaHei, sans-serif;
   color: #333333;
   background-color: #fff;
   text-rendering: optimizeLegibility;
@@ -1264,7 +1269,7 @@ h6 {
   border-radius: 0.25rem;
   width: auto;
 }
-.dropdown.simple .up.menu, .button-dropdown .up.menu {
+.dropdown.simple .top.menu, .button-dropdown .top.menu {
   top: auto;
   bottom: 100%;
   margin-bottom: 0.2rem;
@@ -1275,6 +1280,15 @@ h6 {
 }
 .dropdown.simple .active.menu, .button-dropdown .active.menu {
   display: block;
+}
+
+.dropdown.hover:hover, .dropdown.active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.dropdown.hover:hover > .menu, .dropdown.active > .menu {
+  display: block;
+  border-top-width: 0;
 }
 
 .dropdown {
@@ -1321,14 +1335,6 @@ h6 {
   border: 4px solid transparent;
   transition: transform .4s ease-in-out;
 }
-.dropdown.active {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.dropdown.active > .menu {
-  display: block;
-  border-top-width: 0;
-}
 .dropdown.simple {
   border: 0;
   padding: 0;
@@ -1343,14 +1349,17 @@ h6 {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  /* .button {
+     &:focus, &.active {
+       ~ .menu {
+         display: block;
+       }
+     }
+   }*/
 }
 .button-dropdown.active .menu {
   display: block;
   left: auto;
-  right: 0;
-}
-.button-dropdown .button:focus ~ .menu, .button-dropdown .button.active ~ .menu {
-  display: block;
 }
 
 .button {
@@ -1593,7 +1602,7 @@ h6 {
 }
 .card .card-row {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.25rem;
 }
 .card .card-body {
   padding: 0.5rem 1rem;
@@ -1641,7 +1650,7 @@ h6 {
 .row > *[class^=col-] {
   position: relative;
   display: block;
-  padding: 0.5rem 0.25rem;
+  padding: 0.25rem 0.25rem;
   float: left;
 }
 .row > .col-xs-1 {
@@ -2123,7 +2132,7 @@ h6 {
   top: 0;
   border-left-width: 0;
   border-top-width: 0;
-  border-bottom-right: 0;
+  border-bottom-width: 0;
 }
 .navbar.fixed.bottom {
   bottom: 0;
@@ -2182,22 +2191,22 @@ h6 {
   background-color: #4BB84F;
 }
 
-@media screen and (min-width: 767px) {
+/** Not needed for mobile device
+@include media-query((key:'min-width', value: map-get($bs-layout, 'xs'))) {
   .navbar > .switch {
     display: none;
   }
 }
-@media screen and (max-width: 767px) {
+
+@include media-query((key:'max-width', value: map-get($bs-layout, 'xs'))) {
   .navbar > .list {
     display: none;
   }
-
   .navbar > .switch {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    @include make-flex;
   }
 }
+**/
 .menu {
   outline: none;
   border: 1px solid #ccc;

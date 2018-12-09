@@ -2,8 +2,14 @@ html {
   font-size: 16px;
 }
 
+@media only screen and (min-width: 640px) {
+  html {
+    font-size: 200% !important;
+  }
+}
+
 body {
-  font: 1rem/1.5rem tahoma, arial, Microsoft YaHei, sans-serif;
+  font: 1rem/1.5 tahoma, arial, Microsoft YaHei, sans-serif;
   color: $text-color;
   background-color: $body-background-color;
 
