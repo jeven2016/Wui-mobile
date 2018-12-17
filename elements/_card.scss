@@ -47,6 +47,7 @@
       @include border-radius($card-inner-border-radius);
       display: block;
       width: 100%;
+      min-height: $card-image-min-height;
       vertical-align: middle;
     }
 
